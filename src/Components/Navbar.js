@@ -18,6 +18,13 @@ const ResponsiveAppBar = () => {
       textDecoration: isActive ? 'underline' : 'none',
     }
   }
+  const desLinkStyles = ({ isActive }) => {
+    return {
+      color: '#fff',
+      fontWeight: 'bold',
+      textDecoration: 'none',
+    }
+  }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -35,7 +42,7 @@ const ResponsiveAppBar = () => {
                   <CatchingPockemonIcon />
                 </IconButton>
                 <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-                  DESTINATION
+                  <NavLink style={desLinkStyles} to='/'>DESTINATION</NavLink>                
                 </Typography>
                 <Tooltip sx={{ mx: 2, background: 'none' }} title='Search' onClick={() => alert('hello')}>
                   <Avatar >
