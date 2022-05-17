@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css' 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter as Router} from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Home from './Components/pages/Home';
 import SignUp from './Components/pages/SignUp';
@@ -13,6 +13,7 @@ import Login from './Components/pages/Login';
 function App() {
   return (
     <>
+      <Router>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -22,6 +23,7 @@ function App() {
         <Route path='signup' element={<SignUp />} />
         <Route path='*' element={<NoMatch/>} />
       </Routes>
+      </Router>
     </>
   );
 }
